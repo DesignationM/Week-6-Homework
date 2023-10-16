@@ -15,20 +15,29 @@ struct TaskRowView: View {
     HStack {
       Text(task.title)
       Spacer()
-		Image(systemName: showAnimation ? "checkmark.square" : "square")
-			.foregroundColor(showAnimation ? Color.green : Color.red)
-/// R5 onTap adds the listener for the tap
-		.onTapGesture {
-			/// R5 withAnimation controls the animation
+		Button(action: {
 			withAnimation(.easeInOut(duration: 0.4)) {
 				/// Here we tell the control boolean to switch, which causes the rerender
 				self.showAnimation.toggle()
+				
 				DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-					/// This delays the actual value being changed so the animation can complete. 
+					/// This delays the actual value being changed so the animation can complete.
 					task.isCompleted.toggle()
+					if task.isCompleted {
+						task.shouldDisplay = false
+					}
 				}
 			}
+		}) {
+			Image(systemName: showAnimation ? "checkmark.square" : "square")
+				.foregroundColor(showAnimation ? Color.green : Color.red)
 		}
+		
+/// R5 onTap adds the listener for the tap
+//		.onTapGesture {
+//			/// R5 withAnimation controls the animation
+//			
+//		}
 
     }
     .font(.title3)
@@ -38,6 +47,7 @@ struct TaskRowView: View {
 	.onAppear() {
 		showAnimation = task.isCompleted
 	}
+	
   }
 }
 

@@ -6,7 +6,7 @@ import SwiftUI
 
 struct ContentView: View {
   @StateObject var taskStore = TaskStore()
-  @AppStorage("CurrentTab") var selectedTab = 0
+  @AppStorage("CurrentTab") var selectedTab = 3
   var body: some View {
 
 /// R3 - At this point each tab will have their own navigation stack so we'll move that into the view that displays the tab's content.
@@ -49,6 +49,11 @@ struct ContentView: View {
 				  }
 				  .tag(2)
 			  /// Note not having a tag and create a bug where changes on the child will swap tabs
+			  IanListView(taskStore: taskStore, isCompleted: false)
+				  .tabItem {
+					  Label("A&B2", systemImage: "list.bullet.circle")
+				  }
+				  .tag(3)
 		  }
 		}
       }

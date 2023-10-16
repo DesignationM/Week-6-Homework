@@ -10,6 +10,7 @@
 		4082286B2AD7993A0085F26C /* NavigationTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082286A2AD7993A0085F26C /* NavigationTabView.swift */; };
 		4082286D2AD7B7AA0085F26C /* GridAndListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082286C2AD7B7AA0085F26C /* GridAndListView.swift */; };
 		408228702AD7B8F80085F26C /* GridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082286F2AD7B8F80085F26C /* GridItemView.swift */; };
+		40BB30B92AD8DB7900A5DC8B /* IanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB30B82AD8DB7900A5DC8B /* IanListView.swift */; };
 		BA1340E72A915A2A001A1F9F /* Homework5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1340E62A915A2A001A1F9F /* Homework5App.swift */; };
 		BA1340E92A915A2A001A1F9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1340E82A915A2A001A1F9F /* ContentView.swift */; };
 		BA1340EB2A915A2D001A1F9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1340EA2A915A2D001A1F9F /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		4082286A2AD7993A0085F26C /* NavigationTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabView.swift; sourceTree = "<group>"; };
 		4082286C2AD7B7AA0085F26C /* GridAndListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridAndListView.swift; sourceTree = "<group>"; };
 		4082286F2AD7B8F80085F26C /* GridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemView.swift; sourceTree = "<group>"; };
+		40BB30B82AD8DB7900A5DC8B /* IanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IanListView.swift; sourceTree = "<group>"; };
 		BA1340E32A915A2A001A1F9F /* Homework6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1340E62A915A2A001A1F9F /* Homework5App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework5App.swift; sourceTree = "<group>"; };
 		BA1340E82A915A2A001A1F9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				BA1340FC2A918B27001A1F9F /* TaskDetailView.swift */,
 				BA6EC8FB2AC4753D008BBB16 /* NewTaskButtonView.swift */,
 				4082286A2AD7993A0085F26C /* NavigationTabView.swift */,
+				40BB30B82AD8DB7900A5DC8B /* IanListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				BA1340F92A916627001A1F9F /* TaskRowView.swift in Sources */,
 				4082286D2AD7B7AA0085F26C /* GridAndListView.swift in Sources */,
 				BA1340FD2A918B27001A1F9F /* TaskDetailView.swift in Sources */,
+				40BB30B92AD8DB7900A5DC8B /* IanListView.swift in Sources */,
 				4082286B2AD7993A0085F26C /* NavigationTabView.swift in Sources */,
 				BA1340F72A916399001A1F9F /* AddTaskView.swift in Sources */,
 				BA1340E92A915A2A001A1F9F /* ContentView.swift in Sources */,

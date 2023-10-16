@@ -10,6 +10,7 @@ struct Task: Identifiable, Hashable {
   var category: Category
   var isCompleted: Bool = false
   var notes: String = ""
+	var shouldDisplay: Bool = true
 }
 
 enum Category:String, CaseIterable {
@@ -23,6 +24,10 @@ class TaskStore: ObservableObject {
 	@Published var tasks: [Task] = []
 	@Published var addingTask = false
 	@Published var searchText = ""
+	@Published var testTasks: [Task] = []
+	@Published var testTasks2: [Task] = []
+	
+	private var fakeholder = 0
 	
 	init(_ loadData: Bool = true) {
 		tasks.append(Task(title: "Buy groceries", category: .home))
@@ -75,6 +80,16 @@ class TaskStore: ObservableObject {
 		tasks.append(Task(title: "Edit the vacation photos", category: .personal))
 		tasks.append(Task(title: "Plant new flowers in the garden", category: .home))
 		tasks.append(Task(title: "Brush up on a foreign language", category: .personal, isCompleted: true))
+		
+		testTasks.append(Task(title: "Buy groceries", category: .home))
+		testTasks.append(Task(title: "Walk the dog", category: .home))
+		testTasks.append(Task(title: "Water the plants", category: .home, isCompleted: true))
+		testTasks.append(Task(title: "Read a chapter of a book", category: .personal))
+		
+		testTasks2.append(Task(title: "Buy groceries", category: .home))
+		testTasks2.append(Task(title: "Walk the dog", category: .home))
+		testTasks2.append(Task(title: "Water the plants", category: .home, isCompleted: true))
+		testTasks2.append(Task(title: "Read a chapter of a book", category: .personal))
 	}
 	
 	func addTask(title: String) {
@@ -94,5 +109,33 @@ class TaskStore: ObservableObject {
 	
 	func getCount(_ isCompleted: Bool) -> Int {
 		tasks.filter{$0.isCompleted == isCompleted}.count
+	}
+	func removeTask(task:Task) {
+		if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+			tasks.remove(at: index)
+		}
+	}
+	
+	func removeTestTask(task:Task) {
+		if let index = testTasks.firstIndex(where: { $0.id == task.id }) {
+			testTasks.remove(at: index)
+		}
+		insertNewTask(true)
+		
+	}
+	func removeTestTask2(task:Task) {
+		if let index = testTasks2.firstIndex(where: { $0.id == task.id }) {
+			testTasks2.remove(at: index)
+		}
+		insertNewTask(false)
+	}
+	
+	func insertNewTask(_ name: Bool) {
+		if name && testTasks.count <= 1 {
+			testTasks.append(Task(title: "Task \(fakeholder)", category: .noCategory))
+		} else if testTasks2.count <= 1{
+			testTasks2.append(Task(title: "Task \(fakeholder)", category: .noCategory))
+		}
+		fakeholder += 1
 	}
 }
